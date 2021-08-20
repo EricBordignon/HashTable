@@ -21,6 +21,8 @@ int main(void)
         keep = get_int("1. Add another number: \n0. Exit: \n");
     }
 
+    return 10;
+
     // Print out words
     for(int i = 0; i < SIZE; i++)
     {
