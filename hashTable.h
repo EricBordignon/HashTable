@@ -22,17 +22,26 @@ node;
 node *DICTIONARY[SIZE];
 
 // Functions
-int hash_function(char *w)
+void tonull()
 {
-    char c = toupper(w[0]);
-
-    return c - 65;
+    for(int i = 0; i < SIZE; i++)
+    {
+        DICTIONARY[i] = malloc(sizeof(node));
+    }
 }
 
 void insertion(char *w)
 {
-    int index = hash_function(w);
+    char c = toupper(w[0]);
 
-    printf("%i\n", index);
+    int index = c - 65;
+
+    node *new_node = malloc(sizeof(node));
+
+    new_node = DICTIONARY[index];
+
+    DICTIONARY[index] -> next = new_node;
+
+    strcpy(DICTIONARY[index] -> word, w);
 }
 
