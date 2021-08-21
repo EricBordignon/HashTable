@@ -4,13 +4,9 @@
 
 int main(void)
 {
-
-
     tonull();
 
     int keep = 1;
-
-
 
     // Get words
     while(keep)
@@ -25,7 +21,7 @@ int main(void)
     {
         for(node *ptr = DICTIONARY[i]; ptr != NULL; ptr = ptr -> next)
         {
-            printf("%s;  ", ptr -> word);
+            printf("%s,   ", ptr -> word);
         }
 
         printf("\n");

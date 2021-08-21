@@ -27,6 +27,10 @@ void tonull()
     for(int i = 0; i < SIZE; i++)
     {
         DICTIONARY[i] = malloc(sizeof(node));
+
+        DICTIONARY[i] -> next = NULL;
+
+        DICTIONARY[i] -> word[0] = 65 + i;
     }
 }
 
@@ -38,10 +42,10 @@ void insertion(char *w)
 
     node *new_node = malloc(sizeof(node));
 
-    new_node = DICTIONARY[index];
+    new_node ->next = DICTIONARY[index] -> next;
+
+    strcpy(new_node -> word, w);
 
     DICTIONARY[index] -> next = new_node;
-
-    strcpy(DICTIONARY[index] -> word, w);
 }
 
